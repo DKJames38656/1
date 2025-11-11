@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>江仲翔的個人網站</title>
+  <style>
+    /* ========= 主題設定：科技感、影片背景區塊 ========= */
+    :root {
+      --accent-color: #38bdf8;
+      --text-color: #f1f5f9;
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Noto Sans TC', 'Segoe UI', Roboto, Arial, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* ====== 頁首影片背景區塊 ====== */
+    header {
+      position: relative;
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    header video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.5);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.6rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      margin-top: 0.8rem;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: rgba(15, 23, 42, 0.9);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(6px);
+    }
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    section h2 {
+      border-left: 5px solid var(--accent-color);
+      padding-left: 0.6rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.5rem;
+    }
+
+    #about p {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .project {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+    .project:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    }
+    .project h3 { margin-top: 0; color: var(--accent-color); }
+    .project p { color: #cbd5e1; font-size: 0.95rem; }
+    .project a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .project a:hover { text-decoration: underline; }
+
+    #contact ul {
+      list-style: none;
+      padding: 0;
+    }
+    #contact li { margin-bottom: 0.5rem; }
+    #contact a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+    #contact a:hover { text-decoration: underline; }
+
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      border-top: 1px solid #1e293b;
+    }
+  </style>
+</head>
+<body>
+  <!-- ====== 頁首區塊（影片背景） ====== -->
+  <header>
+    <!-- 將這裡的 src 改成你想要的影片檔案路徑，例如 ./video/bg.mp4 或線上影片連結 -->
+    <video autoplay muted loop playsinline>
+      <source src="/jzx/4K_120_-10.mp4" type="video/mp4" />
+      您的瀏覽器不支援影片播放。
+    </video>
+
+    <h1>江仲翔</h1>
+    <p> 展示創意、程式與學習歷程</p>
+  </header>
+
+  <nav>
+    <a href="#about">關於我</a>
+    <a href="#projects">作品展示</a>
+    <a href="#contact">聯絡方式</a>
+  </nav>
+
+  <section id="about">
+    <h2>關於我</h2>
+    <p>目前就讀 樹德科技大學 電腦與通訊系三年級</p>
+  </section>
+
+  <section id="projects">
+    <h2>作品展示</h2>
+    <div class="project-list">
+      <div class="project">
+        <h3>[作品名稱 1]</h3>
+        <p>[作品簡介，例如使用的技術或解決的問題]</p>
+        <p><a href="1.html" target="_blank">測試網頁</a></p>
+        <p><a href="2.html" target="_blank">測試網頁2</a></p>
+      </div>
+      <div class="project">
+        <h3>[作品名稱 2]</h3>
+        <p>[作品簡介]</p>
+        <p><a href="#" target="_blank">前往作品連結</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>我的聯絡方式</h2>
+    <ul>
+      <li>Email: <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl">s23115107@stu.edu.tw</a></li>
+      <li>Facebook: <a href="https://www.facebook.com/share/1EgkEFWBqc/?mibextid=wwXIfr" target="_blank">江仲翔的網站</a></li>
+      <li>Instagram: <a href="https://www.instagram.com/jzx_0105?igsh=cHhtbmdoNml0eGYx&utm_source=qr" target="_blank">Jzx_0105</a></li>
+      <li>Discord: <a href="https://www.instagram.com/jzx_0105?igsh=cHhtbmdoNml0eGYx&utm_source=qr" target="_blank">DK_James38656</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 江仲翔. 保留所有權利。</p>
+  </footer>
+</body>
+</html>
